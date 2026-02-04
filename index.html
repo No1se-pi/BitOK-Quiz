@@ -637,6 +637,21 @@
             border-color: #3498db;
         }
         
+        .short-answer-input {
+            width: 100%;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        
+        .short-answer-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -729,7 +744,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-random"></i>
                     </div>
-                    <h3>5 Random Questions</h3>
+                    <h3>5 Random Questions</3>
                     <p>Different questions each time</p>
                 </div>
                 <div class="feature-item">
@@ -794,7 +809,7 @@
     </div>
 
     <script>
-        // Database with 9 questions - FIXED MATCHING QUESTIONS
+        // Database with 9 questions - FIXED: text answer now accepts just "pseudonymous"
         const questionDatabase = [
             {
                 question: "We're too small for regulators to care",
@@ -826,7 +841,7 @@
                         "Counter-Terrorism Financing"
                     ]
                 },
-                correct: [0, 1, 2, 3], // KYC→0, KYT→1, AML→2, CTF→3
+                correct: [0, 1, 2, 3],
                 feedback: "KYC = Know Your Customer, KYT = Know Your Transaction, AML = Anti-Money Laundering, CTF = Counter-Terrorism Financing",
                 questionType: "matching"
             },
@@ -852,7 +867,7 @@
             {
                 question: "What's the biggest misconception about blockchain anonymity?",
                 options: [],
-                correct: "blockchain is not anonymous, it's pseudonymous",
+                correct: "pseudonymous", // CHANGED: Now just one word
                 feedback: "Correct! Blockchain is pseudonymous, not anonymous. All transactions are traceable on the public ledger.",
                 questionType: "text-answer"
             },
@@ -879,7 +894,7 @@
                         "Economic sanctions"
                     ]
                 },
-                correct: [0, 1, 2, 3], // FinCEN→0, SEC→1, FATF→2, OFAC→3
+                correct: [0, 1, 2, 3],
                 feedback: "FinCEN = Financial intelligence, SEC = Securities regulation, FATF = Anti-money laundering, OFAC = Economic sanctions",
                 questionType: "matching"
             },
@@ -933,18 +948,6 @@
             userAnswers = new Array(selectedQuestions.length).fill(null);
             userFinalAnswers = new Array(selectedQuestions.length).fill(null);
             matchingAnswers = {};
-            
-            // DEBUG: Show selected questions
-            console.log("=== SELECTED QUESTIONS ===");
-            selectedQuestions.forEach((q, i) => {
-                console.log(`Q${i+1}: ${q.question}`);
-                console.log(`Type: ${q.questionType}`);
-                if (q.questionType === 'matching') {
-                    console.log("Left:", q.options.left);
-                    console.log("Right:", q.options.right);
-                    console.log("Correct:", q.correct);
-                }
-            });
         }
 
         // Function to show intro screen
@@ -1008,7 +1011,7 @@
                     optionsContainer = createMatchingOptions(index, question);
                     break;
                 case 'text-answer':
-                    optionsContainer = createTextAnswerInput(index, question);
+                    optionsContainer = createShortTextAnswerInput(index, question);
                     break;
                 default:
                     optionsContainer = createMultipleChoiceOptions(index, question);
@@ -1038,8 +1041,10 @@
             
             if (finalAnswer !== null) {
                 if (question.questionType === 'text-answer') {
-                    isCorrect = finalAnswer.toLowerCase().includes('anonymous') && 
-                               finalAnswer.toLowerCase().includes('pseudonymous');
+                    // CHANGED: Now just check for "pseudonymous"
+                    const userAnswer = finalAnswer.toLowerCase().trim();
+                    const correctAnswer = question.correct.toLowerCase();
+                    isCorrect = userAnswer === correctAnswer;
                 } else if (question.questionType === 'matching') {
                     isCorrect = finalAnswer === true;
                 } else {
@@ -1163,7 +1168,7 @@
             return optionsContainer;
         }
 
-        // Create matching options - FIXED VERSION
+        // Create matching options
         function createMatchingOptions(index, question) {
             const optionsContainer = document.createElement('div');
             optionsContainer.className = 'matching-container';
@@ -1252,14 +1257,15 @@
             return optionsContainer;
         }
 
-        // Create text answer input
-        function createTextAnswerInput(index, question) {
+        // Create short text answer input (one word answer)
+        function createShortTextAnswerInput(index, question) {
             const container = document.createElement('div');
             container.className = 'text-answer-container';
             
-            const input = document.createElement('textarea');
-            input.className = 'text-answer-input';
-            input.placeholder = 'Type your answer here...';
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'short-answer-input';
+            input.placeholder = 'Type your one-word answer here...';
             
             const submitBtn = document.createElement('button');
             submitBtn.className = 'btn btn-submit';
@@ -1295,9 +1301,10 @@
                         submitBtn.disabled = true;
                         submitBtn.textContent = 'Answer Submitted';
                         
-                        // Check if answer is correct
-                        const isCorrect = userFinalAnswers[index].toLowerCase().includes('anonymous') && 
-                                        userFinalAnswers[index].toLowerCase().includes('pseudonymous');
+                        // Check if answer is correct (just "pseudonymous")
+                        const userAnswer = userFinalAnswers[index].toLowerCase();
+                        const correctAnswer = question.correct.toLowerCase();
+                        const isCorrect = userAnswer === correctAnswer;
                         
                         // Show feedback
                         showFeedback(index, isCorrect);
@@ -1306,6 +1313,13 @@
                         updateCorrectCount();
                         updateButtons();
                         updateProgress();
+                    }
+                });
+                
+                // Allow pressing Enter to submit
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        submitBtn.click();
                     }
                 });
             }
@@ -1321,11 +1335,8 @@
             let allMatched = true;
             let isCorrect = true;
             
-            console.log(`Checking matching for question ${index}:`, matchingAnswers);
-            
             for (let i = 0; i < question.options.left.length; i++) {
                 const userMatch = matchingAnswers[`${index}-${i}`];
-                console.log(`Item ${i}: userMatch = ${userMatch}, correct = ${question.correct[i]}`);
                 
                 if (userMatch === undefined) {
                     allMatched = false;
@@ -1335,8 +1346,6 @@
                     isCorrect = false;
                 }
             }
-            
-            console.log(`All matched: ${allMatched}, Is correct: ${isCorrect}`);
             
             if (allMatched) {
                 userAnswers[index] = true;
@@ -1446,9 +1455,10 @@
                     const question = selectedQuestions[index];
                     
                     if (question.questionType === 'text-answer') {
-                        if (typeof finalAnswer === 'string' && 
-                            finalAnswer.toLowerCase().includes('anonymous') && 
-                            finalAnswer.toLowerCase().includes('pseudonymous')) {
+                        // CHANGED: Now just check for exact match
+                        const userAnswer = finalAnswer.toLowerCase().trim();
+                        const correctAnswer = question.correct.toLowerCase();
+                        if (userAnswer === correctAnswer) {
                             correctAnswersCount++;
                         }
                     } else if (question.questionType === 'matching') {
@@ -1460,8 +1470,6 @@
                     }
                 }
             });
-            
-            console.log("Correct answers:", correctAnswersCount);
         }
 
         // Function to update progress
@@ -1548,9 +1556,9 @@
                 let userAnswerText = '';
                 
                 if (question.questionType === 'text-answer') {
-                    isCorrect = finalAnswer && 
-                               finalAnswer.toLowerCase().includes('anonymous') && 
-                               finalAnswer.toLowerCase().includes('pseudonymous');
+                    const userAnswer = finalAnswer ? finalAnswer.toLowerCase().trim() : '';
+                    const correctAnswer = question.correct.toLowerCase();
+                    isCorrect = userAnswer === correctAnswer;
                     userAnswerText = finalAnswer || 'No answer';
                 } else if (question.questionType === 'matching') {
                     isCorrect = finalAnswer === true;
