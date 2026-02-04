@@ -48,8 +48,8 @@
         }
         
         .logo-image {
-            width: 80px;
-            height: 80px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             /* Blue border removed */
@@ -84,6 +84,7 @@
             border-radius: 30px;
             font-weight: bold;
             margin-bottom: 15px;
+            margin-top: 20px;
         }
         
         .question-text {
@@ -347,7 +348,7 @@
             <div class="header-logo">
                 <!-- Your PNG image here -->
                 <img src="image.png" alt="My photo" class="logo-image">
-                <h1>BitOK Quiz</h1>
+                <h1>Compliance Knowledge Quiz</h1>
             </div>
         </header>
         
@@ -394,67 +395,106 @@
     <script>
         // Database with 9 questions
         const questionDatabase = [
-            {
-                question: "Which programming language is considered the main one for client-side web development?",
-                options: ["Python", "Java", "JavaScript", "C++"],
-                correct: 2
-            },
-            {
-                question: "What does the abbreviation HTML stand for?",
-                options: [
-                    "Hyper Text Markup Language",
-                    "High Tech Modern Language",
-                    "Hyper Transfer Markup Language",
-                    "Home Tool Markup Language"
-                ],
-                correct: 0
-            },
-            {
-                question: "Which year is considered the birth year of the internet?",
-                options: ["1969", "1983", "1991", "1975"],
-                correct: 0
-            },
-            {
-                question: "Which protocol is used for secure data transmission on the internet?",
-                options: ["HTTP", "FTP", "HTTPS", "SMTP"],
-                correct: 2
-            },
-            {
-                question: "What is CSS?",
-                options: [
-                    "Computer Style Sheets",
-                    "Creative Style System",
-                    "Cascading Style Sheets",
-                    "Colorful Style Sheets"
-                ],
-                correct: 2
-            },
-            {
-                question: "Which tag is used to create a link in HTML?",
-                options: ["<link>", "<href>", "<a>", "<url>"],
-                correct: 2
-            },
-            {
-                question: "What is API?",
-                options: [
-                    "Application Programming Interface",
-                    "Advanced Programming Instruction",
-                    "Automated Programming Interface",
-                    "Application Process Integration"
-                ],
-                correct: 0
-            },
-            {
-                question: "Which HTTP method is used to send data to the server?",
-                options: ["GET", "POST", "PUT", "All of the above"],
-                correct: 3
-            },
-            {
-                question: "Which language is used to style web pages?",
-                options: ["HTML", "JavaScript", "Python", "CSS"],
-                correct: 3
-            }
-        ];
+    {
+        question: "We're too small for regulators to care",
+        options: [
+            "Regulators ignore small startups",
+            "Regulators target everyone handling funds",
+            "Compliance starts only after scaling",
+            "Tiny projects are under the radar"
+        ],
+        correct: 1,  // B
+        photo: "images/q1.png"
+    },
+    {
+        question: "Compliance will slow us down",
+        options: [
+            "Compliance blocks growth",
+            "It delays product development",
+            "Smart tools speed things up",
+            "Compliance = red tape"
+        ],
+        correct: 2,  // C
+        photo: "images/q2.png"
+    },
+    {
+        question: "No license – no compliance",
+        options: [
+            "Compliance begins after licensing",
+            "AML applies as soon as you handle crypto",
+            "Small wallets are exempt",
+            "Only regulated entities need KYC/KYT"
+        ],
+        correct: 1,  // B
+        photo: "images/q3.png"
+    },
+    {
+        question: "We're DeFi, so we're exempt",
+        options: [
+            "Code = no law",
+            "DAO = no responsibility",
+            "Humans behind DeFi are still liable",
+            "DeFi is fully outside regulation"
+        ],
+        correct: 2,  // C
+        photo: "images/q4.png"
+    },
+    {
+        question: "Compliance = KYC forms",
+        options: [
+            "Compliance means ongoing monitoring (KYT)",
+            "ID check once is enough",
+            "Only large platforms need KYT",
+            "KYC = full compliance"
+        ],
+        correct: 0,  // A
+        photo: "images/q5.png"
+    },
+    {
+        question: "Users will leave if we add compliance",
+        options: [
+            "Users hate KYC",
+            "Only retail users care",
+            "Compliance reduces trust",
+            "Real users prefer secure platforms"
+        ],
+        correct: 3,  // D
+        photo: "images/q6.png"
+    },
+    {
+        question: "We can outsource compliance",
+        options: [
+            "Vendors take all responsibility",
+            "You stay accountable for outcomes",
+            "Outsourcing = zero risk",
+            "Providers handle regulators"
+        ],
+        correct: 1,  // B
+        photo: "images/q7.png"
+    },
+    {
+        question: "Blockchain is anonymous anyway",
+        options: [
+            "On-chain data is traceable",
+            "Wallets hide identity completely",
+            "Mixers erase all traces",
+            "Crypto = full anonymity"
+        ],
+        correct: 0,  // A
+        photo: "images/q8.png"
+    },
+    {
+        question: "Compliance kills innovation",
+        options: [
+            "Rules stop progress",
+            "Compliance enables scalable innovation",
+            "Ignore laws — build faster",
+            "Regulators hate new ideas"
+        ],
+        correct: 1,  // B
+        photo: "images/q9.png"
+    }
+];
 
         // DOM elements
         const questionsContainer = document.getElementById('questions-container');
@@ -711,6 +751,8 @@
         // Initialize the quiz when the page loads
         function initQuiz() {
             // Select 5 random questions
+
+            
             selectRandomQuestions();
             
             // Display the first question
@@ -724,6 +766,8 @@
             
             // Update the correct answer count
             updateCorrectCount();
+
+            progressBarEl.style.width = '5%';
         }
 
         // Start the quiz when the page loads
