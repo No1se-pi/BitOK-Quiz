@@ -14,8 +14,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: #333;
+            background: linear-gradient(135deg, #F5C6D6 0%, #E8A2A7 100%);
+            color: #5A5A5A;
             min-height: 100vh;
             padding: 20px;
             display: flex;
@@ -26,9 +26,9 @@
         .container {
             max-width: 900px;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: #FFF5F0;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(201, 115, 142, 0.15);
             overflow: hidden;
             padding: 30px;
             animation: containerSlide 0.5s ease-out;
@@ -43,7 +43,7 @@
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 2px solid #F5C6D6;
         }
         
         .header-logo {
@@ -60,6 +60,7 @@
             border-radius: 50%;
             object-fit: cover;
             animation: pulse 2s infinite;
+            border: 4px solid #E8A2A7;
         }
         
         @keyframes pulse {
@@ -69,10 +70,10 @@
         }
         
         h1 {
-            color: #2c3e50;
+            color: #C9738E;
             margin-bottom: 10px;
             font-size: 2.5rem;
-            background: linear-gradient(90deg, #3498db, #6a11cb);
+            background: linear-gradient(90deg, #C9738E, #E8A2A7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -86,7 +87,7 @@
         
         .intro-icon {
             font-size: 4rem;
-            color: #3498db;
+            color: #C9738E;
             margin-bottom: 20px;
             animation: bounce 2s infinite;
         }
@@ -98,14 +99,14 @@
         
         .intro-title {
             font-size: 2.2rem;
-            color: #2c3e50;
+            color: #C9738E;
             margin-bottom: 20px;
         }
         
         .intro-description {
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #495057;
+            color: #5A5A5A;
             margin-bottom: 30px;
             max-width: 700px;
             margin-left: auto;
@@ -120,20 +121,20 @@
         }
         
         .feature-item {
-            background-color: #f8f9fa;
+            background-color: rgba(245, 198, 214, 0.2);
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #C9738E;
         }
         
         .feature-icon {
             font-size: 1.5rem;
-            color: #3498db;
+            color: #C9738E;
             margin-bottom: 10px;
         }
         
         .start-btn {
-            background: linear-gradient(135deg, #3498db, #6a11cb);
+            background: linear-gradient(135deg, #C9738E, #E8A2A7);
             color: white;
             border: none;
             padding: 18px 50px;
@@ -145,12 +146,12 @@
             display: inline-flex;
             align-items: center;
             gap: 15px;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 5px 15px rgba(201, 115, 142, 0.3);
         }
         
         .start-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 8px 20px rgba(201, 115, 142, 0.4);
         }
         
         .question-container {
@@ -176,19 +177,19 @@
         }
         
         .question-number {
-            background: linear-gradient(135deg, #3498db, #6a11cb);
+            background: linear-gradient(135deg, #C9738E, #E8A2A7);
             color: white;
             display: inline-block;
             padding: 10px 25px;
             border-radius: 30px;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 3px 10px rgba(201, 115, 142, 0.2);
         }
         
         .question-type-badge {
-            background-color: #e9ecef;
-            color: #495057;
+            background-color: rgba(245, 198, 214, 0.3);
+            color: #5A5A5A;
             padding: 6px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -199,11 +200,11 @@
             font-size: 1.5rem;
             line-height: 1.6;
             margin-bottom: 30px;
-            color: #2c3e50;
+            color: #C9738E;
             padding: 20px;
-            background-color: #f8f9fa;
+            background-color: rgba(245, 198, 214, 0.15);
             border-radius: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #C9738E;
         }
         
         .options-container {
@@ -220,8 +221,8 @@
         }
         
         .option {
-            background-color: #f8f9fa;
-            border: 2px solid #e9ecef;
+            background-color: rgba(245, 198, 214, 0.1);
+            border: 2px solid rgba(232, 162, 167, 0.3);
             border-radius: 15px;
             padding: 20px;
             cursor: pointer;
@@ -235,19 +236,19 @@
         
         .option:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-color: #3498db;
+            box-shadow: 0 8px 20px rgba(232, 162, 167, 0.15);
+            border-color: #E8A2A7;
         }
         
         .option.selected {
-            background-color: #d1ecf1;
-            border-color: #3498db;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+            background-color: rgba(201, 115, 142, 0.15);
+            border-color: #C9738E;
+            box-shadow: 0 5px 15px rgba(201, 115, 142, 0.2);
         }
         
         .option.correct {
-            background-color: #d4edda;
-            border-color: #28a745;
+            background-color: rgba(168, 220, 155, 0.3);
+            border-color: #5CB85C;
             animation: correctPulse 0.5s ease;
         }
         
@@ -258,8 +259,8 @@
         }
         
         .option.incorrect {
-            background-color: #f8d7da;
-            border-color: #dc3545;
+            background-color: rgba(236, 151, 152, 0.2);
+            border-color: #EC9798;
             animation: shake 0.5s ease;
         }
         
@@ -275,7 +276,7 @@
             align-items: center;
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #3498db, #6a11cb);
+            background: linear-gradient(135deg, #C9738E, #E8A2A7);
             border-radius: 50%;
             margin-right: 20px;
             font-weight: bold;
@@ -284,16 +285,16 @@
         }
         
         .option.selected .option-letter {
-            background: linear-gradient(135deg, #2980b9, #5a0db3);
+            background: linear-gradient(135deg, #A85C7C, #C9738E);
         }
         
         .feedback-container {
             display: none;
-            background-color: #f8f9fa;
+            background-color: rgba(245, 198, 214, 0.15);
             border-radius: 15px;
             padding: 25px;
             margin-top: 20px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #C9738E;
             animation: fadeIn 0.5s ease;
         }
         
@@ -302,7 +303,7 @@
             align-items: center;
             gap: 10px;
             font-size: 1.2rem;
-            color: #2c3e50;
+            color: #C9738E;
             margin-bottom: 15px;
         }
         
@@ -311,15 +312,15 @@
         }
         
         .feedback-icon.correct {
-            color: #28a745;
+            color: #5CB85C;
         }
         
         .feedback-icon.incorrect {
-            color: #dc3545;
+            color: #EC9798;
         }
         
         .feedback-text {
-            color: #495057;
+            color: #5A5A5A;
             line-height: 1.6;
             font-size: 1.1rem;
         }
@@ -330,7 +331,7 @@
         
         .progress-bar {
             height: 12px;
-            background-color: #e9ecef;
+            background-color: rgba(245, 198, 214, 0.3);
             border-radius: 6px;
             overflow: hidden;
             position: relative;
@@ -338,7 +339,7 @@
         
         .progress {
             height: 100%;
-            background: linear-gradient(90deg, #3498db, #6a11cb);
+            background: linear-gradient(90deg, #C9738E, #E8A2A7);
             width: 5%;
             transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -369,7 +370,7 @@
             justify-content: space-between;
             margin-top: 10px;
             font-size: 0.9rem;
-            color: #6c757d;
+            color: #5A5A5A;
         }
         
         .controls {
@@ -392,41 +393,41 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(201, 115, 142, 0.1);
         }
         
         .btn-prev {
-            background-color: #6c757d;
+            background-color: #A8A8A8;
             color: white;
         }
         
         .btn-prev:hover {
-            background-color: #5a6268;
+            background-color: #8C8C8C;
             transform: translateY(-2px);
         }
         
         .btn-next {
-            background-color: #3498db;
+            background: linear-gradient(135deg, #C9738E, #E8A2A7);
             color: white;
         }
         
         .btn-next:hover {
-            background-color: #2980b9;
+            background: linear-gradient(135deg, #A85C7C, #C9738E);
             transform: translateY(-2px);
         }
         
         .btn-submit {
-            background: linear-gradient(135deg, #28a745, #20c997);
+            background: linear-gradient(135deg, #5CB85C, #88C988);
             color: white;
         }
         
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 6px 15px rgba(92, 184, 92, 0.3);
         }
         
         .btn-restart {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background: linear-gradient(135deg, #C9738E, #E8A2A7);
             color: white;
             width: 100%;
             margin-top: 10px;
@@ -434,24 +435,24 @@
         
         .btn-restart:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(106, 17, 203, 0.3);
+            box-shadow: 0 6px 15px rgba(201, 115, 142, 0.3);
         }
         
         .btn-contacts {
-            background: linear-gradient(135deg, #3498db, #2575fc);
-            color: white;
+            background: linear-gradient(135deg, #E8A2A7, #F5C6D6);
+            color: #5A5A5A;
             width: 100%;
             margin-top: 20px;
         }
         
         .btn-contacts:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 6px 15px rgba(232, 162, 167, 0.3);
         }
         
         .btn:disabled {
-            background-color: #e9ecef;
-            color: #adb5bd;
+            background-color: rgba(245, 198, 214, 0.3);
+            color: #A8A8A8;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
@@ -473,9 +474,9 @@
         
         .contacts-title {
             font-size: 2.5rem;
-            color: #2c3e50;
+            color: #C9738E;
             margin-bottom: 30px;
-            background: linear-gradient(90deg, #3498db, #6a11cb);
+            background: linear-gradient(90deg, #C9738E, #E8A2A7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -483,7 +484,7 @@
         
         .contacts-description {
             font-size: 1.2rem;
-            color: #495057;
+            color: #5A5A5A;
             margin-bottom: 40px;
             max-width: 700px;
             margin-left: auto;
@@ -499,12 +500,12 @@
         }
         
         .contact-card {
-            background-color: #f8f9fa;
+            background-color: rgba(245, 198, 214, 0.15);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 2px solid #e9ecef;
+            border: 2px solid rgba(232, 162, 167, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -514,17 +515,17 @@
         
         .contact-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: #3498db;
+            box-shadow: 0 15px 30px rgba(232, 162, 167, 0.15);
+            border-color: #E8A2A7;
         }
         
         .contact-icon {
             font-size: 3.5rem;
-            color: #3498db;
+            color: #C9738E;
             margin-bottom: 20px;
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #3498db, #6a11cb);
+            background: linear-gradient(135deg, #C9738E, #E8A2A7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -532,12 +533,12 @@
         
         .contact-title {
             font-size: 1.5rem;
-            color: #2c3e50;
+            color: #C9738E;
             margin-bottom: 15px;
         }
         
         .contact-description {
-            color: #6c757d;
+            color: #5A5A5A;
             margin-bottom: 25px;
             line-height: 1.5;
         }
@@ -546,7 +547,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(135deg, #3498db, #6a11cb);
+            background: linear-gradient(135deg, #C9738E, #E8A2A7);
             color: white;
             text-decoration: none;
             padding: 12px 30px;
@@ -554,12 +555,12 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 4px 15px rgba(201, 115, 142, 0.2);
         }
         
         .contact-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 8px 20px rgba(201, 115, 142, 0.3);
             text-decoration: none;
         }
         
@@ -569,9 +570,9 @@
         
         .results-title {
             font-size: 2.5rem;
-            color: #2c3e50;
+            color: #C9738E;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #3498db, #6a11cb);
+            background: linear-gradient(90deg, #C9738E, #E8A2A7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -581,13 +582,13 @@
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            background: conic-gradient(#28a745 var(--progress), #e9ecef 0%);
+            background: conic-gradient(#5CB85C var(--progress), rgba(245, 198, 214, 0.3) 0%);
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 40px auto;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(201, 115, 142, 0.15);
             animation: circleAppear 1s ease-out;
         }
         
@@ -601,14 +602,14 @@
             position: absolute;
             width: 200px;
             height: 200px;
-            background-color: white;
+            background-color: #FFF5F0;
             border-radius: 50%;
         }
         
         .score-value {
             font-size: 3.5rem;
             font-weight: bold;
-            color: #2c3e50;
+            color: #C9738E;
             position: relative;
             z-index: 1;
         }
@@ -616,24 +617,24 @@
         .score-text {
             font-size: 1.4rem;
             margin-bottom: 40px;
-            color: #495057;
+            color: #5A5A5A;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .results-details {
-            background-color: #f8f9fa;
+            background-color: rgba(245, 198, 214, 0.15);
             border-radius: 20px;
             padding: 30px;
             margin-top: 40px;
             text-align: left;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(232, 162, 167, 0.1);
         }
         
         .detail-item {
             padding: 20px;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid rgba(232, 162, 167, 0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -641,7 +642,7 @@
         }
         
         .detail-item:hover {
-            background-color: rgba(233, 236, 239, 0.3);
+            background-color: rgba(245, 198, 214, 0.1);
         }
         
         .detail-item:last-child {
@@ -649,7 +650,7 @@
         }
         
         .correct-answer {
-            color: #28a745;
+            color: #5CB85C;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -657,7 +658,7 @@
         }
         
         .wrong-answer {
-            color: #dc3545;
+            color: #EC9798;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -680,12 +681,12 @@
         }
         
         .true-btn {
-            background-color: #28a745;
+            background: linear-gradient(135deg, #5CB85C, #88C988);
             color: white;
         }
         
         .false-btn {
-            background-color: #dc3545;
+            background: linear-gradient(135deg, #EC9798, #F5C6D6);
             color: white;
         }
         
@@ -703,8 +704,8 @@
         }
         
         .matching-item {
-            background-color: #f8f9fa;
-            border: 2px solid #e9ecef;
+            background-color: rgba(245, 198, 214, 0.15);
+            border: 2px solid rgba(232, 162, 167, 0.3);
             border-radius: 10px;
             padding: 15px;
             cursor: move;
@@ -721,13 +722,13 @@
         }
         
         .matching-item.matched {
-            background-color: #d4edda;
-            border-color: #28a745;
+            background-color: rgba(168, 220, 155, 0.3);
+            border-color: #5CB85C;
         }
         
         .matching-instructions {
             text-align: center;
-            color: #6c757d;
+            color: #5A5A5A;
             font-style: italic;
             margin-bottom: 15px;
         }
@@ -739,32 +740,34 @@
         .text-answer-input {
             width: 100%;
             padding: 20px;
-            border: 2px solid #e9ecef;
+            border: 2px solid rgba(232, 162, 167, 0.3);
             border-radius: 15px;
             font-size: 1.1rem;
             resize: vertical;
             min-height: 100px;
             transition: border-color 0.3s;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         
         .text-answer-input:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #C9738E;
         }
         
         .short-answer-input {
             width: 100%;
             padding: 20px;
-            border: 2px solid #e9ecef;
+            border: 2px solid rgba(232, 162, 167, 0.3);
             border-radius: 15px;
             font-size: 1.3rem;
             text-align: center;
             transition: border-color 0.3s;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         
         .short-answer-input:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #C9738E;
         }
         
         @media (max-width: 768px) {
@@ -979,97 +982,97 @@
         // Database with 9 questions
         const questionDatabase = [
             {
-                question: "We're too small for regulators to care",
+                question: "We're just a small startup - regulators won't pay attention to us.",
                 options: [
                     "Regulators ignore small startups",
-                    "Regulators target everyone handling funds",
-                    "Compliance starts only after scaling",
-                    "Tiny projects are under the radar"
+                    "Regulators can target any business handling funds, regardless of size",
+                    "Compliance requirements only apply after you scale up",
+                    "Very small projects fly under the regulatory radar"
                 ],
                 correct: 1,
-                feedback: "Incorrect! Regulators can and do target small projects handling funds. Even small startups must comply with AML regulations from day one.",
+                feedback: "Incorrect! Regulators can and do target small businesses handling funds. Even startups must comply with AML regulations from day one.",
                 questionType: "multiple-choice"
             },
             {
-                question: "True or False: Compliance only applies after you get a license",
+                question: "Compliance only becomes necessary after you obtain a formal license.",
                 options: ["True", "False"],
                 correct: 1,
                 feedback: "False! Compliance requirements (especially AML) apply as soon as you handle customer funds, regardless of licensing status.",
                 questionType: "true-false"
             },
             {
-                question: "Match the compliance concept with its definition",
+                question: "Match the compliance concept with its correct definition:",
                 options: {
                     left: ["KYC", "KYT", "AML", "CTF"],
                     right: [
-                        "Know Your Customer",
-                        "Know Your Transaction",
-                        "Anti-Money Laundering", 
-                        "Counter-Terrorism Financing"
+                        "Know Your Customer - verifying client identity",
+                        "Know Your Transaction - monitoring transaction patterns",
+                        "Anti-Money Laundering - preventing illicit fund movement", 
+                        "Counter-Terrorism Financing - stopping terror funding"
                     ]
                 },
                 correct: [0, 1, 2, 3],
-                feedback: "KYC = Know Your Customer, KYT = Know Your Transaction, AML = Anti-Money Laundering, CTF = Counter-Terrorism Financing",
+                feedback: "KYC = Know Your Customer (verifying identity), KYT = Know Your Transaction (monitoring patterns), AML = Anti-Money Laundering, CTF = Counter-Terrorism Financing",
                 questionType: "matching"
             },
             {
-                question: "We're DeFi, so we're exempt from regulations",
+                question: "As a DeFi project, we're completely exempt from financial regulations.",
                 options: [
-                    "True, code is law",
-                    "False, humans behind DeFi are still liable",
-                    "Only partially regulated",
-                    "Depends on the jurisdiction"
+                    "True - code is the only law in DeFi",
+                    "False - humans behind DeFi protocols can still be held liable",
+                    "Regulations only partially apply to DeFi",
+                    "It depends entirely on the jurisdiction"
                 ],
                 correct: 1,
-                feedback: "False! Even in DeFi, the humans behind the protocols can be held liable for regulatory violations.",
+                feedback: "False! Even in decentralized finance, the individuals and teams behind protocols can be held liable for regulatory violations.",
                 questionType: "multiple-choice"
             },
             {
-                question: "Compliance is just about filling out KYC forms",
+                question: "Compliance is primarily about collecting KYC forms during onboarding.",
                 options: ["Agree", "Disagree"],
                 correct: 1,
-                feedback: "Disagree! Compliance involves ongoing monitoring (KYT), risk assessment, and reporting - not just initial KYC checks.",
+                feedback: "Disagree! True compliance involves ongoing monitoring (KYT), regular risk assessments, and continuous reporting - not just initial KYC checks.",
                 questionType: "true-false"
             },
             {
-                question: "What's the biggest misconception about blockchain anonymity?",
+                question: "Blockchain transactions are anonymous. What's wrong with this statement?",
                 options: [],
                 correct: "pseudonymous",
-                feedback: "Correct! Blockchain is pseudonymous, not anonymous. All transactions are traceable on the public ledger.",
+                feedback: "Correct! Blockchain is pseudonymous, not anonymous. While addresses don't directly show identity, all transactions are permanently recorded and traceable on the public ledger.",
                 questionType: "text-answer"
             },
             {
-                question: "Outsourcing compliance transfers all responsibility to the vendor",
+                question: "If we outsource compliance to a third-party vendor, all responsibility transfers to them.",
                 options: [
-                    "True, vendors assume full liability",
-                    "False, you remain accountable for outcomes",
-                    "Only for technical implementation",
-                    "Depends on the contract"
+                    "True - vendors assume full liability for compliance",
+                    "False - the business remains ultimately accountable",
+                    "Only technical implementation responsibility transfers",
+                    "It depends entirely on the contract terms"
                 ],
                 correct: 1,
-                feedback: "False! You remain ultimately accountable for compliance outcomes even when outsourcing.",
+                feedback: "False! While you can delegate tasks, you remain ultimately accountable for compliance outcomes even when using third-party vendors.",
                 questionType: "multiple-choice"
             },
             {
-                question: "Match these regulatory agencies with their focus",
+                question: "Match these regulatory agencies with their primary focus areas:",
                 options: {
                     left: ["FinCEN", "SEC", "FATF", "OFAC"],
                     right: [
-                        "Financial intelligence",
-                        "Securities regulation",
-                        "Anti-money laundering",
-                        "Economic sanctions"
+                        "Financial intelligence and AML enforcement",
+                        "Securities markets regulation and investor protection",
+                        "International anti-money laundering standards",
+                        "Economic sanctions and national security"
                     ]
                 },
                 correct: [0, 1, 2, 3],
-                feedback: "FinCEN = Financial intelligence, SEC = Securities regulation, FATF = Anti-money laundering, OFAC = Economic sanctions",
+                feedback: "FinCEN = Financial intelligence, SEC = Securities regulation, FATF = International AML standards, OFAC = Economic sanctions",
                 questionType: "matching"
             },
             {
-                question: "Compliance stifles innovation in fintech",
+                question: "Strict compliance requirements stifle innovation in the fintech industry.",
                 options: ["Strongly agree", "Agree", "Disagree", "Strongly disagree"],
                 correct: 3,
-                feedback: "Proper compliance actually enables scalable innovation by building trust and reducing regulatory risks.",
+                feedback: "Proper compliance actually enables sustainable innovation by building trust with users and reducing regulatory risks that could derail growth.",
                 questionType: "multiple-choice"
             }
         ];
@@ -1735,7 +1738,7 @@
             scoreTextEl.textContent = `You answered ${correctAnswersCount} out of ${selectedQuestions.length} questions correctly. ${scoreText}`;
             
             // Show result details
-            resultsDetailsEl.innerHTML = '<h3 style="margin-bottom: 20px; color: #2c3e50;">Detailed Results:</h3>';
+            resultsDetailsEl.innerHTML = '<h3 style="margin-bottom: 20px; color: #C9738E;">Detailed Results:</h3>';
             
             selectedQuestions.forEach((question, index) => {
                 const finalAnswer = userFinalAnswers[index];
