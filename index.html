@@ -437,6 +437,18 @@
             box-shadow: 0 6px 15px rgba(106, 17, 203, 0.3);
         }
         
+        .btn-contacts {
+            background: linear-gradient(135deg, #3498db, #2575fc);
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn-contacts:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+        }
+        
         .btn:disabled {
             background-color: #e9ecef;
             color: #adb5bd;
@@ -450,6 +462,109 @@
             text-align: center;
             padding: 40px 20px;
             animation: fadeIn 0.8s ease;
+        }
+        
+        .contacts-container {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .contacts-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #3498db, #6a11cb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contacts-description {
+            font-size: 1.2rem;
+            color: #495057;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-card {
+            background-color: #f8f9fa;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #3498db;
+        }
+        
+        .contact-icon {
+            font-size: 3.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #6a11cb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .contact-description {
+            color: #6c757d;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #3498db, #6a11cb);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            text-decoration: none;
+        }
+        
+        .contact-link i {
+            font-size: 1.3rem;
         }
         
         .results-title {
@@ -696,6 +811,10 @@
                 font-size: 2.8rem;
             }
             
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .matching-container {
                 grid-template-columns: 1fr;
             }
@@ -744,7 +863,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-random"></i>
                     </div>
-                    <h3>5 Random Questions</3>
+                    <h3>5 Random Questions</h3>
                     <p>Different questions each time</p>
                 </div>
                 <div class="feature-item">
@@ -789,9 +908,57 @@
                 <!-- Results details will be added by JavaScript -->
             </div>
             
-            <button class="btn btn-restart" id="restart-btn">
-                <i class="fas fa-redo"></i> Take Quiz Again
-            </button>
+            <div class="controls" style="margin-top: 40px;">
+                <button class="btn btn-restart" id="restart-btn">
+                    <i class="fas fa-redo"></i> Take Quiz Again
+                </button>
+                <button class="btn btn-contacts" id="contacts-btn">
+                    <i class="fas fa-address-book"></i> Contact Us
+                </button>
+            </div>
+        </div>
+        
+        <!-- Contacts container -->
+        <div class="contacts-container" id="contacts-container">
+            <h2 class="contacts-title">Stay Connected</h2>
+            <p class="contacts-description">
+                Thank you for completing the Compliance Knowledge Quiz! Stay updated with the latest 
+                compliance insights, regulatory updates, and industry best practices by connecting with us.
+            </p>
+            
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h3 class="contact-title">Telegram Channel</h3>
+                    <p class="contact-description">
+                        Join our Telegram channel for daily compliance updates, news, and discussions.
+                    </p>
+                    <a href="https://t.me/bitok_global" target="_blank" class="contact-link">
+                        <i class="fab fa-telegram"></i> Join Channel
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="contact-title">Website</h3>
+                    <p class="contact-description">
+                        Visit our website for comprehensive compliance resources, tools, and services.
+                    </p>
+                    <a href="https://bitok.org/ru/" target="_blank" class="contact-link">
+                        <i class="fas fa-external-link-alt"></i> Visit Website
+                    </a>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn btn-restart" id="back-to-quiz-btn">
+                    <i class="fas fa-redo"></i> Take Quiz Again
+                </button>
+            </div>
         </div>
         
         <!-- Control buttons -->
@@ -809,7 +976,7 @@
     </div>
 
     <script>
-        // Database with 9 questions - FIXED: text answer now accepts just "pseudonymous"
+        // Database with 9 questions
         const questionDatabase = [
             {
                 question: "We're too small for regulators to care",
@@ -867,7 +1034,7 @@
             {
                 question: "What's the biggest misconception about blockchain anonymity?",
                 options: [],
-                correct: "pseudonymous", // CHANGED: Now just one word
+                correct: "pseudonymous",
                 feedback: "Correct! Blockchain is pseudonymous, not anonymous. All transactions are traceable on the public ledger.",
                 questionType: "text-answer"
             },
@@ -913,10 +1080,13 @@
         const progressContainer = document.getElementById('progress-container');
         const questionsContainer = document.getElementById('questions-container');
         const resultsContainer = document.getElementById('results-container');
+        const contactsContainer = document.getElementById('contacts-container');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const submitBtn = document.getElementById('submit-btn');
         const restartBtn = document.getElementById('restart-btn');
+        const contactsBtn = document.getElementById('contacts-btn');
+        const backToQuizBtn = document.getElementById('back-to-quiz-btn');
         const progressBarEl = document.getElementById('progress-bar');
         const progressText = document.getElementById('progress-text');
         const progressPercent = document.getElementById('progress-percent');
@@ -957,6 +1127,17 @@
             questionsContainer.style.display = 'none';
             controls.style.display = 'none';
             resultsContainer.style.display = 'none';
+            contactsContainer.style.display = 'none';
+        }
+
+        // Function to show contacts screen
+        function showContactsScreen() {
+            introScreen.style.display = 'none';
+            progressContainer.style.display = 'none';
+            questionsContainer.style.display = 'none';
+            controls.style.display = 'none';
+            resultsContainer.style.display = 'none';
+            contactsContainer.style.display = 'block';
         }
 
         // Function to start the quiz
@@ -965,10 +1146,21 @@
             progressContainer.style.display = 'block';
             questionsContainer.style.display = 'block';
             controls.style.display = 'flex';
+            resultsContainer.style.display = 'none';
+            contactsContainer.style.display = 'none';
             
             selectRandomQuestions();
             displayQuestion(0);
             updateProgress();
+        }
+
+        // Function to show results
+        function showResults() {
+            questionsContainer.style.display = 'none';
+            controls.style.display = 'none';
+            progressContainer.style.display = 'none';
+            resultsContainer.style.display = 'block';
+            contactsContainer.style.display = 'none';
         }
 
         // Function to display a question
@@ -1041,7 +1233,6 @@
             
             if (finalAnswer !== null) {
                 if (question.questionType === 'text-answer') {
-                    // CHANGED: Now just check for "pseudonymous"
                     const userAnswer = finalAnswer.toLowerCase().trim();
                     const correctAnswer = question.correct.toLowerCase();
                     isCorrect = userAnswer === correctAnswer;
@@ -1257,7 +1448,7 @@
             return optionsContainer;
         }
 
-        // Create short text answer input (one word answer)
+        // Create short text answer input
         function createShortTextAnswerInput(index, question) {
             const container = document.createElement('div');
             container.className = 'text-answer-container';
@@ -1301,7 +1492,7 @@
                         submitBtn.disabled = true;
                         submitBtn.textContent = 'Answer Submitted';
                         
-                        // Check if answer is correct (just "pseudonymous")
+                        // Check if answer is correct
                         const userAnswer = userFinalAnswers[index].toLowerCase();
                         const correctAnswer = question.correct.toLowerCase();
                         const isCorrect = userAnswer === correctAnswer;
@@ -1455,7 +1646,6 @@
                     const question = selectedQuestions[index];
                     
                     if (question.questionType === 'text-answer') {
-                        // CHANGED: Now just check for exact match
                         const userAnswer = finalAnswer.toLowerCase().trim();
                         const correctAnswer = question.correct.toLowerCase();
                         if (userAnswer === correctAnswer) {
@@ -1522,10 +1712,7 @@
 
         // Function to finish the quiz and show results
         function submitQuiz() {
-            questionsContainer.style.display = 'none';
-            controls.style.display = 'none';
-            progressContainer.style.display = 'none';
-            resultsContainer.style.display = 'block';
+            showResults();
             
             const score = Math.round((correctAnswersCount / selectedQuestions.length) * 100);
             scoreValueEl.textContent = `${score}%`;
@@ -1610,15 +1797,7 @@
             matchingAnswers = {};
             
             selectRandomQuestions();
-            
-            questionsContainer.style.display = 'block';
-            controls.style.display = 'flex';
-            progressContainer.style.display = 'block';
-            resultsContainer.style.display = 'none';
-            
-            displayQuestion(0);
-            updateCorrectCount();
-            updateProgress();
+            startQuiz();
         }
 
         // Initialize the quiz
@@ -1630,6 +1809,8 @@
             prevBtn.addEventListener('click', prevQuestion);
             submitBtn.addEventListener('click', submitQuiz);
             restartBtn.addEventListener('click', restartQuiz);
+            contactsBtn.addEventListener('click', showContactsScreen);
+            backToQuizBtn.addEventListener('click', restartQuiz);
         }
 
         // Start when page loads
